@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/theme/monokai.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.css" />
+    <link rel="stylesheet" href="css/editor.css" />
+  </head>
+  <body>
+    <div class="conteiner-editor">
+      <textarea id="editor"></textarea>
+      <div id="myPreview"></div>
+    </div>
+    <input type="file" id="inputFile">
+    <button onclick="preview()">Visualizar</button>
+    
+    <script>
+      var myWords = ["document.body","document.getElementById('')","document.querySelector('')","document.title"];
+
+      // Seta as configurações do edditor
+      const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        mode: "htmlmixed", //htmlmixed  modo composto que inclui o html, javascript e css.
+        theme: "monokai",
+        lineNumbers: true,
+        extraKeys: { "Ctrl-Space": "autocomplete" },
+        hintOptions: { hint: myHintFunction, }
+      });
+
+      // Função para sujestões de código
+      function myHintFunction(editor) {
+        var cursor = editor.getCursor();
+        var token = editor.getTokenAt(cursor);
+        var start = token.start;
+        var end = cursor.ch;
+        var line = cursor.line;
+        var currentWord = token.string;
+        var wordList = myWords.filter(function (word) {
+          return word.startsWith(currentWord);
+        });
+        if (wordList.length > 0) {
+          return {
+            list: wordList,
+            from: CodeMirror.Pos(line, start),
+            to: CodeMirror.Pos(line, end)
+          };
+        }
+      }
+
+      // carregando um arquivo
+      const inputFile = document.getElementById("inputFile");
+      inputFile.addEventListener("change", () => {
+      const file = inputFile.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const content = event.target.result;
+        editor.setValue(content);
+      };
+      reader.readAsText(file);
+      });
+
+      // Preview do código digitado 
+      editor.on("change", function() {
+      let myPreview = document.getElementById('myPreview');
+      myPreview.innerHTML = editor.getValue();
+      });
+
+      //preview em nova janela
+      function preview() {
+      var code = editor.getValue();
+      var previewWindow = window.open("", "preview", "width=800,height=600");
+      previewWindow.document.write(code);
+      previewWindow.onbeforeunload = function() {
+        previewWindow.close();
+      };
+    }
+    </script>
+  </body>
+</html>
