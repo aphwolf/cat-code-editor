@@ -16,10 +16,21 @@ nav {
 }
 
 .CodeMirror {
-    width: 900px;
+    width: 950px;
     height: 500px;
+    font-size: 14pt;
 }
 
 .conteiner-editor {
     display: flex;
+}
+
+.conteiner-editor-preview {
+    width: 400px;
+    height: 450px;
+    overflow: auto;
+    border: 2px solid #3a3737;
+    margin-left: 10px;
+    padding: 10px;
+
 }

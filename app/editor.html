@@ -3,22 +3,27 @@
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/theme/monokai.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/xml/xml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/mode/htmlmixed/htmlmixed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <link rel="stylesheet" href="css/editor.css" />
   </head>
   <body>
+    <!-- Campo do editor de código-->
     <div class="conteiner-editor">
-      <textarea id="editor"></textarea>
-      <div id="myPreview"></div>
+      <textarea  id="editor"></textarea>
     </div>
-    <input type="file" id="inputFile">
+    
+    <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
+    <input type="file" id="inputFile" accept=".js, .json, .html, .css">
     <button onclick="preview()">Visualizar</button>
+    <button onclick="gerarZip()">Gerar ZIP</button>
     
     <script>
       var myWords = ["document.body","document.getElementById('')","document.querySelector('')","document.title"];
@@ -64,21 +69,29 @@
       reader.readAsText(file);
       });
 
-      // Preview do código digitado 
-      editor.on("change", function() {
-      let myPreview = document.getElementById('myPreview');
-      myPreview.innerHTML = editor.getValue();
-      });
-
       //preview em nova janela
       function preview() {
       var code = editor.getValue();
       var previewWindow = window.open("", "preview", "width=800,height=600");
+      previewWindow.document.open();
+      previewWindow.document.write('');
       previewWindow.document.write(code);
       previewWindow.onbeforeunload = function() {
         previewWindow.close();
       };
     }
+
+    // gerar o arquivo ZIP e baixá-lo no navegador
+    function gerarZip() {
+      var zip = new JSZip();
+      zip.file("arquivo1.txt", editor.getValue());
+      //zip.file("arquivo2.txt", "Conteúdo do arquivo 2");
+      zip.file("imagem.jpg", "conteúdo da imagem", {base64: false});
+      zip.generateAsync({type:"blob"}).then(function(content) {
+      saveAs(content, "arquivos.zip");
+      });
+    }
+    
     </script>
   </body>
 </html>
