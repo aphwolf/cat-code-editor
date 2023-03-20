@@ -5,11 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  /> 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="app/css/index.css">
     <title>Document</title>
 </head>
 <body>
-   <!--  -->
+    <header id="header" class="header">
+        <a href="/Icones/icon.png">Icon</a>
+    </header>
+    <nav class="dp-menu">
+        <ul>
+            <li><a href="#">Arquivos</a>
+                <ul>
+                    <li><a href="#">Novo Projeto</a></li>
+                    <li><a href="#">Abrir Arquivo</a></li>
+                    <li><a href="#">Salvar Arquivo</a></li>
+                    <li><a href="#">Salvar Arquivo em Zip</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Editar</a>
+                <ul>
+                    <li><a href="#">Copiar</a></li>
+                    <li><a href="#">Colar</a></li>
+                    <li><a href="#">Apagar Tudo</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Execultar</a>
+                <ul>
+                    <li><a href="#">Abrir em Uma Nova janela</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Preferencias</a>
+                <ul>
+                    <li><a href="#">Editor</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Documentação</a>
+                <ul>
+                    <li><a href="#">Atalhos</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre</a>
+                <ul>
+                    <li><a href="#">versão</a></li>
+                    <li><a href="#">Criadores</a></li>
+                    <li><a href="#">Github</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
 <!-- <i class="fa-light fa-house-chimney"></i> 
 <i class="fa-light fa-display"></i>
 <i class="fa-brands fa-google-drive"></i>
@@ -17,13 +61,11 @@
 <i class="fa-sharp fa-solid fa-star"></i>
 <i class="fa-duotone fa-star"></i>
 -->
-
 <main>
- <!-- Secçao de conteudo home, this device e outros links localizado a esquerda do projeto -->
 
+ <!-- Secçao de conteudo home, this device e outros links localizado a esquerda do projeto -->
     <section class="sec1">
-        <article class="art1">
-           
+        <article class="art1">      
             <div class="nav nav1"> Home</div>
             <div class="nav1">This Device</div>
             <div class="nav1"> <i class="fa-brands fa-google-drive"></i> Google Drive</div>
@@ -35,21 +77,18 @@
     <section class="sec2">
                    <!-- Article que engloba fotos botoes e o modal -->
         <article class="art2">
-
             <div class="topea">
-                <p><img src="imagens/Photopea2.jpg" alt="Photopea"></p>
-                <h1>Photopea</h1>
+                <img src="./app/images/phoenix-squadron.png" alt="Phoenix Code Editor">
+                <span class="text-logo">Phoenix Code Editor</span>
             </div>
-
             <div class="botoes">
                 <p>
                     <input type="button" value="Novo Projeto" id="NProjeto" onclick="NovoProjeto()">
                     <input type="button" value="Abrir do computador">
-                    <input type="button" value="PSD Modelos">
+                    <input type="button" value="Templates">
                 </p>
             </div>
-                                        <!-- Divs e class responsavel pelo modal -->
-
+            <!-- Divs e class responsavel pelo modal -->
             <div id="modal" class="modal2">
                  <!-- class modal-conteiner responsavel pelo bloco de js e .json -->
             <div class="modal-cont">
