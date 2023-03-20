@@ -1,9 +1,157 @@
-body {
-    margin: 0;
-    background-color: rgb(14, 14, 14);
+                       /* formacao geral do codigo, html e o body*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #272525; 
+}
+                       /* formata  da section a esquerda*/
+section.sec1{
+    width: 200px;
+    height: 100vh;
+    float: left;
+    color: white;
+}
+                      /* formatacao do article e os seus conteudos */
+.art1{
+    width: 160px;
+    height: 300px;
+    margin: 2px 30px 0px 6px;
+    padding: 10px 0px;
+} 
+
+.nav{
+    width: 140px;
+    height: 15px;
+    margin: 10px 0px;
+    padding: 10px ;
+    background: black;
+    text-align: center;
+}
+
+.nav1{
+    width: 140px;
+    height: 15px;
+    margin: 10px 0px;
+    padding: 10px ;
+    text-align: center;
+    font-size: .75em;
+}
+
+                         /* Formatacao da section a direita e os seus conteudos */
+section.sec2{
+    width: 600px;
+    height: 100vh;
+    float: left;
     color: white;
 }
 
-h1 {
+.topea{
+       width: 600px;
+       height: 110px;
+       text-align: left;
+       padding-top: 20px;
+       display: flex;
+       color: white;
+}
+
+.topea img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.topea h1{
+    margin-top: 10px;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+ .botoes{
+    display: flex;
+    width: 500px;
+    height: 50px;
+} 
+
+
+.botoes input{
+    width: 100px;
+    height: 30px;
+    margin: 10px 10px 10px 0px;
+    background: none;
+    border-radius: 5px;
+    border: .75px solid white;
+    text-align: center;
     color: white;
+    text-align: center;
+}
+
+.botoes input:nth-child(1){
+    width: 120px;
+}
+
+.botoes input:nth-child(2){
+    width: 150px;
+}
+
+.botoes input:nth-child(3){
+    width: 120px;
+}
+                     /* Formatacao do modal e os seus conteudos */
+
+ #modal{
+    display: none;
+} 
+
+.modal2{
+    width: 300px;
+    height: 200px;
+    border: 1px solid rgb(58, 2, 1);
+}
+  
+.modal-cont{
+    display: flex;
+}
+.modal-cont :nth-child(2){
+    margin-left: 6px;
+}
+.modal2 img{
+    width:30px;
+    height: 30px;
+    margin-top: 2px;
+    margin-left: 60px;
+}
+
+h2{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+p {
+    font-size: 0.55em;
+    text-indent: 5px;
+}
+                    /* formacao dos blocos no modal */
+.bloco-cont{
+    width: 145px;
+    height: 95px;
+    border: 1px solid rgb(2, 104, 104);
+}
+.modal-cont2{
+    display: flex;
+    margin-top: 5px;
+}
+
+.modal-cont2 span{
+    margin-top: -5px;
+    font-size: 0.5em;
+}
+
+.modal-cont2 :nth-child(2){
+    margin-left: 6px;
 }

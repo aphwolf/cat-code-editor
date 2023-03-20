@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  /> 
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+   <!--  -->
+<!-- <i class="fa-light fa-house-chimney"></i> 
+<i class="fa-light fa-display"></i>
+<i class="fa-brands fa-google-drive"></i>
+<i class="fa-brands fa-dropbox"></i>
+<i class="fa-sharp fa-solid fa-star"></i>
+<i class="fa-duotone fa-star"></i>
+-->
 
+<main>
+ <!-- Secçao de conteudo home, this device e outros links localizado a esquerda do projeto -->
+
+    <section class="sec1">
+        <article class="art1">
+           
+            <div class="nav nav1"> Home</div>
+            <div class="nav1">This Device</div>
+            <div class="nav1"> <i class="fa-brands fa-google-drive"></i> Google Drive</div>
+            <div class="nav1">DropBox</div>
+        </article>
+    </section>
+                  
+     <!-- Seccao dos conteudos localizado a direita do projeto -->
+    <section class="sec2">
+                   <!-- Article que engloba fotos botoes e o modal -->
+        <article class="art2">
+
+            <div class="topea">
+                <p><img src="imagens/Photopea2.jpg" alt="Photopea"></p>
+                <h1>Photopea</h1>
+            </div>
+
+            <div class="botoes">
+                <p>
+                    <input type="button" value="Novo Projeto" id="NProjeto" onclick="NovoProjeto()">
+                    <input type="button" value="Abrir do computador">
+                    <input type="button" value="PSD Modelos">
+                </p>
+            </div>
+                                        <!-- Divs e class responsavel pelo modal -->
+
+            <div id="modal" class="modal2">
+                 <!-- class modal-conteiner responsavel pelo bloco de js e .json -->
+            <div class="modal-cont">
+                <div class="bloco-cont"> 
+                    <img src="imagens/Photopea2.jpg" alt="icon de javascript">
+                    <h2>javascript</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
+                </div>
+
+                <div class="bloco-cont">
+                    <img src="imagens/Photopea2.jpg" alt="icon de JSON">
+                    <h2>.JSON</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
+                </div>
+            </div>
+             
+                   <!-- class modal-conteiner2 responsavel pelo bloco de Html Basico e aplicativo web -->
+            <div class="modal-cont2">
+
+                <div class="bloco-cont">
+                    <img src="imagens/Photopea2.jpg" alt="icon de HTML basico">
+                    <h2>HTML Basico</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
+                </div>
+                          <!-- class bloco-conteiner responsavel por estilizar conteiner de uma forma individual -->
+                <div class="bloco-cont">
+                    <img src="imagens/Photopea2.jpg" alt="icon de aplicativo web">
+                    <h2>Aplicativo web </h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
+                </div>
+            </div>
+             
+
+            </div>
+        </article>
+    </section>
+</main>
+
+
+<script src="index.js"></script>
+</body>
+</html>
