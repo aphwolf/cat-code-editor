@@ -38,6 +38,7 @@
             </li>
             <li><a href="#">Preferencias</a>
                 <ul>
+                    <li><a href="#">Tela Cheia</a></li>
                     <li><a href="#">Tema do Editor</a></li>
                 </ul>
             </li>
@@ -64,10 +65,7 @@
 <i class="fa-duotone fa-star"></i>
 -->
 <main>
-<br>
- <!-- Secçao de conteudo home, this device e outros links localizado a esquerda do projeto -->
-
-                  
+<br>             
      <!-- Seccao dos conteudos localizado a direita do projeto -->
     <section class="sec2">
         <!-- Article que engloba fotos botoes e o modal -->
@@ -88,22 +86,33 @@
             </div> 
         </article>
     </section>
+     <!-- Secçaona direita do projeto -->
+    <section class="sec1">
+        <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png" id="sec1-banner">       
+        <p id="sec1-frase">"O Phoenix Code Editor é um verdadeiro coringa: leve, rápido e moderno, com suporte a todas as sintaxes que preciso."</p>
+    </section> 
 </main>
 
 <!-- Janela modal: Escolha o tipo de projeto-->
 <div id="myModal" class="modal">
     <div class="modal-content">
-        <h2>Escolha o tipo de projeto:</h2>
+
+        <div>
+            <p>Nome do projeto: </p>
+            <input type="text" placeholder="Meu Projeto Web" id="nome-projeto">
+        </div>
+
             <div class="cards-conteiner">
             <span class="close" onclick="closeModal()">x</span>
-            <div class="card">
+
+            <div class="card" onclick="newProjectJs()">
                 <div class="card-img">
                 <img src="app/images/icon-js.svg">
                 </div>
                 <input type="button" value="JAVASCRIPT" onclick="">
             </div>
 
-            <div class="card">
+            <div class="card" onclick="newProjectWeb()">
                 <div class="card-img">
                 <img src="app/images/icon-js.svg">
                 <img src="app/images/icon-html.svg">
