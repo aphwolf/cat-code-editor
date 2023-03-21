@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  /> 
     <link rel="stylesheet" href="app/css/index.css">
-    <title>Document</title>
+    <script src="app/js/index.js"></script>
+    <title>Phoenix Code Editor - Inicio</title>
 </head>
+<header>
+
+</header>
 <body>
-    <header id="header" class="header">
-        <a href="/Icones/icon.png">Icon</a>
-    </header>
-    <nav class="dp-menu">
+<nav class="dp-menu">
         <ul>
+            <li><img style="padding-top: 10px; margin-left: 10px;" src="app/images/phoenix-squadron-16.png"></li>
             <li><a href="#">Arquivos</a>
                 <ul>
                     <li><a href="#">Novo Projeto</a></li>
@@ -31,12 +33,12 @@
             </li>
             <li><a href="#">Execultar</a>
                 <ul>
-                    <li><a href="#">Abrir em Uma Nova janela</a></li>
+                    <li><a href="#">Visualizar</a></li>
                 </ul>
             </li>
             <li><a href="#">Preferencias</a>
                 <ul>
-                    <li><a href="#">Editor</a></li>
+                    <li><a href="#">Tema do Editor</a></li>
                 </ul>
             </li>
             <li><a href="#">Documentação</a>
@@ -52,8 +54,8 @@
                 </ul>
             </li>
         </ul>
-    </nav>
-
+</nav>
+<br>
 <!-- <i class="fa-light fa-house-chimney"></i> 
 <i class="fa-light fa-display"></i>
 <i class="fa-brands fa-google-drive"></i>
@@ -62,72 +64,70 @@
 <i class="fa-duotone fa-star"></i>
 -->
 <main>
-
+<br>
  <!-- Secçao de conteudo home, this device e outros links localizado a esquerda do projeto -->
-    <section class="sec1">
-        <article class="art1">      
-            <div class="nav nav1"> Home</div>
-            <div class="nav1">This Device</div>
-            <div class="nav1"> <i class="fa-brands fa-google-drive"></i> Google Drive</div>
-            <div class="nav1">DropBox</div>
-        </article>
-    </section>
+
                   
      <!-- Seccao dos conteudos localizado a direita do projeto -->
     <section class="sec2">
-                   <!-- Article que engloba fotos botoes e o modal -->
+        <!-- Article que engloba fotos botoes e o modal -->
         <article class="art2">
             <div class="topea">
                 <img src="./app/images/phoenix-squadron.png" alt="Phoenix Code Editor">
-                <span class="text-logo">Phoenix Code Editor</span>
+                <div style="padding-left: 20px;">
+                    <span class="text-logo">Phoenix Code Editor</span>
+                    <span class="text-slogan">Code sua visão web com facilidade e eficiência.</span><br>
+                    <span class="text-slogan">deixe nosso editor ser a sua tela em branco!</span>
+                </div> 
             </div>
+            
             <div class="botoes">
-                <p>
-                    <input type="button" value="Novo Projeto" id="NProjeto" onclick="NovoProjeto()">
+                    <input type="button" value="Novo Projeto" id="NProjeto" onclick="openNewProject()">
                     <input type="button" value="Abrir do computador">
                     <input type="button" value="Templates">
-                </p>
-            </div>
-            <!-- Divs e class responsavel pelo modal -->
-            <div id="modal" class="modal2">
-                 <!-- class modal-conteiner responsavel pelo bloco de js e .json -->
-            <div class="modal-cont">
-                <div class="bloco-cont"> 
-                    <img src="imagens/Photopea2.jpg" alt="icon de javascript">
-                    <h2>javascript</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
-                </div>
-
-                <div class="bloco-cont">
-                    <img src="imagens/Photopea2.jpg" alt="icon de JSON">
-                    <h2>.JSON</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
-                </div>
-            </div>
-             
-                   <!-- class modal-conteiner2 responsavel pelo bloco de Html Basico e aplicativo web -->
-            <div class="modal-cont2">
-
-                <div class="bloco-cont">
-                    <img src="imagens/Photopea2.jpg" alt="icon de HTML basico">
-                    <h2>HTML Basico</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
-                </div>
-                          <!-- class bloco-conteiner responsavel por estilizar conteiner de uma forma individual -->
-                <div class="bloco-cont">
-                    <img src="imagens/Photopea2.jpg" alt="icon de aplicativo web">
-                    <h2>Aplicativo web </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste distinctio consequuntur quibusdam </p>
-                </div>
-            </div>
-             
-
-            </div>
+            </div> 
         </article>
     </section>
 </main>
 
+<!-- Janela modal: Escolha o tipo de projeto-->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h2>Escolha o tipo de projeto:</h2>
+            <div class="cards-conteiner">
+            <span class="close" onclick="closeModal()">x</span>
+            <div class="card">
+                <div class="card-img">
+                <img src="app/images/icon-js.svg">
+                </div>
+                <input type="button" value="JAVASCRIPT" onclick="">
+            </div>
 
-<script src="index.js"></script>
+            <div class="card">
+                <div class="card-img">
+                <img src="app/images/icon-js.svg">
+                <img src="app/images/icon-html.svg">
+                <img src="app/images/icon-css.svg">
+                </div>
+                <input type="button" value="HTML, CSS e JS" onclick="">
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                <img src="app/images/icon-html.svg">
+                </div>
+                <input type="button" value="HTML" onclick="">
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                <img src="app/images/icon-json.svg">
+                </div>
+                <input type="button" value="JSON" onclick="">
+            </div>
+       </div>
+    </div>
+</div>
+
 </body>
 </html>
