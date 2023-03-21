@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.3/addon/hint/show-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="./js/auto-complete.js"></script>
     <link rel="stylesheet" href="css/editor.css" />
   </head>
   <body>
@@ -73,15 +74,16 @@
     <button onclick="gerarZip()">Gerar ZIP</button>
     
     <script>
-      var myWords = ["document.body","document.getElementById('')","document.querySelector('')","document.title"];
-
+      let myWords = html5Syntax();
       // Seta as configurações do edditor
       const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
         mode: "htmlmixed", //htmlmixed  modo composto que inclui o html, javascript e css.
         theme: "monokai",
         lineNumbers: true,
         extraKeys: { "Ctrl-Space": "autocomplete" },
-        hintOptions: { hint: myHintFunction, }
+        hintOptions: {
+           completeSingle: true,
+           hint: myHintFunction}
       });
 
       // Função para sujestões de código

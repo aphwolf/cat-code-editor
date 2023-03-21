@@ -1,19 +1,20 @@
-export const html5Syntax = 
+function html5Syntax() {
+const html5Syntax = 
 [
-"<!DOCTYPE html>",
+"!DOCTYPE html",
 "<html>",
-"<head>",
-"<title>",
+"<head></head>",
+"<title></title>",
 "<meta>",
 "<link>",
 "<style>",
-"<script>",
+"<script src=''></script>",
 "<noscript>",
 "<body>",
-"<h1> - <h6>",
+"<h1>",
 "<p>",
 "<a>",
-"<img>",
+"<img src=''>",
 "<ul>",
 "<ol>",
 "<li>",
@@ -42,9 +43,11 @@ export const html5Syntax =
 "<audio>",
 "<source>",
 "<picture>"
-]
+];
+return  html5Syntax;
+}
 
-export const css3Syntax = 
+const css3Syntax = 
 [
 "background",
 "background-attachment",

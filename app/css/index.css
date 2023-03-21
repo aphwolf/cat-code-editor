@@ -180,11 +180,6 @@ section.sec2{
     margin-left: 60px;
 }
 
-h2{
-    font-size: 1.1em;
-    text-align: center;
-}
-
 /* formacao dos blocos no modal */
 
 .bloco-cont{
@@ -225,17 +220,24 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
   
 /* Estilo do conteúdo do modal */
 .modal-content {
+    position: relative;
     display: grid;
     justify-content: center;
     border-radius: 10px;
     background-color: #232323;
-    color: white;
+    color: rgb(244, 244, 244);
     margin: auto;
     padding: 10px;
     border: 1px solid #888;
-    width: 50%;
-    height: 280px;
-    transition: 1s;
+    width: 580px;
+    height: 240px;
+    padding-left: 20px;
+
+}
+
+.modal-content span {
+    color: rgb(186, 186, 186);
+    margin-top: -30px;
 }
 
 .modal-content input[type='text']{
@@ -270,11 +272,11 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 .close {
     position: absolute;
     color: #aaa;
-    right: 340px;
+    right: 5px;
     font-size: 28px;
     font-weight: bold;
     display: inline;
-    top: 45px;
+    top: 25px;
 }
   
 .close:hover,
@@ -288,14 +290,15 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 
 .cards-conteiner {
     display: flex;
+    margin-top: 20px;
 }
 
 .card {
     display: grid;
     position: relative;  
-    font-size: 11pt;
+    font-size: 10pt;
     width: 130px;
-    height: 140px;
+    height: 75px;
     background-color: rgb(238, 238, 238);
     color: black;
     text-align: center;
@@ -311,12 +314,12 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 
 .card-img {
     display: flex;
+    padding-top: 10px;
 }
 
 .card-img img{
     width: 100%;
     height: 35px;
-    margin-top: 50px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     

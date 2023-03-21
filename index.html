@@ -88,7 +88,6 @@
     </section>
     
 </main>
-
          <!-- Secçaona direita do projeto -->
          <div class="galeria">
             <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
@@ -99,15 +98,19 @@
 <!-- Janela modal: Escolha o tipo de projeto-->
 <div id="myModal" class="modal">
     <div class="modal-content">
-
+        <span class="close" onclick="closeModal()">x</span>
+        <h2>Escolha o tipo de projeto:</h2>
+          <span>
+            Escolha entre a criação de um único arquivo, ou a estrutura de uma página web completa! Você
+            pode escolher também entre os modelos de templates já pré-construidos.
+          </span>
             <div class="cards-conteiner">
-            <span class="close" onclick="closeModal()">x</span>
 
             <div class="card" onclick="newProjectJs()">
                 <div class="card-img">
                 <img src="app/images/icon-js.svg">
                 </div>
-                <label>Arquivo Javascript</label>
+                <label>Script JS</label>
             </div>
 
             <div class="card" onclick="newProjectWeb()">
@@ -132,15 +135,7 @@
                 </div>
                 <label>Arquivo JSON</label>
             </div>
-
        </div>
-
-       <div>
-        <label>Nome do projeto:</label>
-        <input type="text" placeholder="Meu Projeto Web" id="nome-projeto">
-        <input type="button" value="Criar Projeto">
-    </div>
-
     </div>
 </div>
 
