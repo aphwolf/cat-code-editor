@@ -82,6 +82,7 @@ main {
     animation:  animateOpacity;
     animation-duration: 1000ms;
     display: flex;
+    justify-content: center;
 }                   
 
 /* formatacao do article e os seus conteudos */
@@ -102,32 +103,11 @@ main {
     letter-spacing: 0px;
     font-size: 38pt;
 }
-/* Formatacao da section a direita e os seus conteudos */
-section.sec1{
-    text-align: left;
-    margin-top: 25px;
-    width: 600px;
-    height: 300px;
-    color: white;
-    margin-left: 50px;
-    transition: opacity 1s ease-in-out;
-}
-
-section.sec1 img {
-    width: 100%;
-}
-
-section.sec1 p {
-    color: #d2d2d2;
-    font-size: 14pt;
-    margin-top: -2px;
-    font-style: italic;
-}
   
 /* Formatacao da section a direita e os seus conteudos */
 section.sec2{
     width: 600px;
-    height: 100vh;
+    height: 250px;
     color: white;
     margin-left: 10px;
 }
@@ -226,7 +206,7 @@ h2{
     margin-left: 6px;
 }
 /* 
-SEÇÃO DE CÓDIGO CRIADA POR MANUEL CHAVES
+SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 */
 .modal { /* Estilo do fundo do modal */
     padding-top: 50px;
@@ -254,16 +234,36 @@ SEÇÃO DE CÓDIGO CRIADA POR MANUEL CHAVES
     padding: 10px;
     border: 1px solid #888;
     width: 50%;
-    height: 300px;
+    height: 280px;
     transition: 1s;
 }
 
-.modal-content input{
-    width: 556px;
+.modal-content input[type='text']{
+    width: 200px;
     height: 30px;
     border-radius: 5px;
-    font-size: 14pt;
+    font-size: 11pt;
     background-color: #f6f6f6;
+    border: none;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.modal-content input[type='button']{
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 11pt;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    margin-left: 5px;
+    font-size: 13pt;
+}
+
+.modal-content input[type='button']:hover {
+    background-color: #fff;
+    color: #1c1b1b;
 }
   
 /* Estilo do botão de fechar */
@@ -293,18 +293,20 @@ SEÇÃO DE CÓDIGO CRIADA POR MANUEL CHAVES
 .card {
     display: grid;
     position: relative;  
-    font-size: 12pt;
+    font-size: 11pt;
     width: 130px;
     height: 140px;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(238, 238, 238);
     color: black;
     text-align: center;
     border-radius: 8px;
     margin-right: 10px;
     border: 2px solid rgb(71, 71, 71);
+    transition: transform 0.3s ease-in-out;
+    
 }
 .card:hover {
-    border: 2px solid rgb(245, 245, 245);
+    transform: scale(1.05);
 }
 
 .card-img {
@@ -325,19 +327,24 @@ SEÇÃO DE CÓDIGO CRIADA POR MANUEL CHAVES
     color: black;
 }
 
-.card input[type="button"] {
-    
-    width: 100%;
-    background-color: rgb(19, 19, 19);
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    border: none;
-    font-size: 11pt;
-    font-style: normal;
-    color: white;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-top: 10px;
-}
+.galeria {
+    animation:  animateOpacity;
+    animation-duration: 1300ms;
+    justify-content: center;
+    display: flex; /* Define o display do container como flex */
+    overflow: none; /* Adiciona uma barra de rolagem horizontal caso as imagens ultrapassem o tamanho do container */
+  }
+  
+  .galeria img {
+    width: 370px;
+    height: 260px; /* Define a largura das imagens como 100% para ocupar todo o espaço do container */
+    margin-right: 40px; /* Adiciona um espaço de 20 pixels entre as imagens */
+    transition: transform 0.5s ease-in-out; /* Define a transição para a propriedade transform com duração de 0.5 segundos e suavização ease-in-out */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.748);
+  }
+  
+  .galeria img:hover {
+    transform: scale(1.1); /* Aplica uma escala de 1.2 às imagens quando o cursor do mouse estiver sobre elas */
+  }
+  
 

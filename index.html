@@ -86,21 +86,19 @@
             </div> 
         </article>
     </section>
-     <!-- Secçaona direita do projeto -->
-    <section class="sec1">
-        <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png" id="sec1-banner">       
-        <p id="sec1-frase">"O Phoenix Code Editor é um verdadeiro coringa: leve, rápido e moderno, com suporte a todas as sintaxes que preciso."</p>
-    </section> 
+    
 </main>
+
+         <!-- Secçaona direita do projeto -->
+         <div class="galeria">
+            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
+            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
+            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
+         </div>
 
 <!-- Janela modal: Escolha o tipo de projeto-->
 <div id="myModal" class="modal">
     <div class="modal-content">
-
-        <div>
-            <p>Nome do projeto: </p>
-            <input type="text" placeholder="Meu Projeto Web" id="nome-projeto">
-        </div>
 
             <div class="cards-conteiner">
             <span class="close" onclick="closeModal()">x</span>
@@ -109,7 +107,7 @@
                 <div class="card-img">
                 <img src="app/images/icon-js.svg">
                 </div>
-                <input type="button" value="JAVASCRIPT" onclick="">
+                <label>Arquivo Javascript</label>
             </div>
 
             <div class="card" onclick="newProjectWeb()">
@@ -118,23 +116,31 @@
                 <img src="app/images/icon-html.svg">
                 <img src="app/images/icon-css.svg">
                 </div>
-                <input type="button" value="HTML, CSS e JS" onclick="">
+                <label>Página Web</label>
             </div>
 
             <div class="card">
                 <div class="card-img">
                 <img src="app/images/icon-html.svg">
                 </div>
-                <input type="button" value="HTML" onclick="">
+                <label>Arquivo HTML</label>
             </div>
 
             <div class="card">
                 <div class="card-img">
                 <img src="app/images/icon-json.svg">
                 </div>
-                <input type="button" value="JSON" onclick="">
+                <label>Arquivo JSON</label>
             </div>
+
        </div>
+
+       <div>
+        <label>Nome do projeto:</label>
+        <input type="text" placeholder="Meu Projeto Web" id="nome-projeto">
+        <input type="button" value="Criar Projeto">
+    </div>
+
     </div>
 </div>
 
