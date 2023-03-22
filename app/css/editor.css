@@ -78,19 +78,27 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 }
 
 /*
-CODIGO EDITADO POR @LEONELMIGUINS
+CODIGO EDITADO POR LEONEL MIGUINS
 */
 
 .CodeMirror {
-    width: 100%;
+    width: 90%;
     height: 500px;
-    font-size: 12pt;
+    font-size: 11pt;
+
 }
 
 .conteiner-editor {
     animation: animateOpacity 1300ms;
     display: flex;
     margin-top: 24px;
+}
+
+.iframe-preview {
+    width: 35%;
+    background-color: aliceblue;
+    color: black;
+    border: none;
 }
 
 .conteiner-editor-preview {

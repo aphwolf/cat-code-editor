@@ -19,7 +19,7 @@
             <li><a href="#">Arquivos</a>
                 <ul>
                     <li><a href="#">Novo Projeto</a></li>
-                    <li><a href="#">Abrir Arquivo</a></li>
+                    <li><a>Abrir Arquivo</a></li>
                     <li><a href="#">Salvar Arquivo</a></li>
                     <li><a href="#">Salvar Arquivo em Zip</a></li>
                 </ul>
@@ -81,7 +81,8 @@
             
             <div class="botoes">
                     <input type="button" value="Novo Projeto" id="NProjeto" onclick="openNewProject()">
-                    <input type="button" value="Abrir do computador">
+                    <input type="button" value="Abrir do computador" onclick="openArq()">
+                    <input style="display: none;" class="input-arq"type="file" id="inputFile" accept=".js, .json, .html, .css">
                     <input type="button" value="Templates">
             </div> 
         </article>
@@ -90,11 +91,19 @@
 </main>
          <!-- Secçaona direita do projeto -->
          <div class="galeria">
-            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
-            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
-            <img src="app/images/_C__Users_Leo_Documents_phoenix_phoenix-code-editor_app_editor.html.png">
-         </div>
-
+            <figure>
+              <img src="app/images/blank.png" alt="Imagem 1">
+              <figcaption>" Realce de sintaxy bonito."</figcaption>
+            </figure>
+            <figure>
+              <img src="app/images/blank.png" alt="Imagem 2">
+              <figcaption>"Desginer Moderno é fácil de usar."</figcaption>
+            </figure>
+            <figure>
+              <img src="app/images/blank-2.png" alt="Imagem 3">
+              <figcaption>"Sintaxy de linguagem embutida."</figcaption>
+            </figure>
+          </div>
 <!-- Janela modal: Escolha o tipo de projeto-->
 <div id="myModal" class="modal">
     <div class="modal-content">

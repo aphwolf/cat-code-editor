@@ -66,11 +66,13 @@
     <!-- Campo do editor de código-->
     <div class="conteiner-editor">
       <textarea  id="editor"></textarea>
+      <iframe id="iframe-prev"class="iframe-preview"></iframe>
     </div>
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
-    <input type="file" id="inputFile" accept=".js, .json, .html, .css">
-    <button onclick="preview()">Visualizar</button>
+    <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
+    <button onclick="previewWindow()">Visualizar</button>
+    <button onclick="previewIframe()">Visualizar</button>
     <button onclick="gerarZip()">Gerar ZIP</button>
     
     <script>
@@ -119,16 +121,27 @@
       });
 
       //preview em nova janela
-      function preview() {
-      var code = editor.getValue();
-      var previewWindow = window.open("", "preview", "width=800,height=600");
-      previewWindow.document.open();
-      previewWindow.document.write('');
-      previewWindow.document.write(code);
-      previewWindow.onbeforeunload = function() {
+      function previewWindow() {
+        var code = editor.getValue();
+        var previewWindow = window.open("", "preview", "width=800,height=600");
+        previewWindow.document.open();
+        previewWindow.document.write('');
+        previewWindow.document.write(code);
+        previewWindow.onbeforeunload = function() {
         previewWindow.close();
       };
     }
+
+     // Atualizar o conteúdo do iframe
+    function previewIframe() {
+      var code = editor.getValue();
+      var iframe = document.getElementById("iframe-prev");
+      var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      iframeDoc.open();
+      iframeDoc.write(code);
+      iframeDoc.close();
+    }
+
 
     // gerar o arquivo ZIP e baixá-lo no navegador
     function gerarZip() {

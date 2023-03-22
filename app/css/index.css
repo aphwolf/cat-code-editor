@@ -18,7 +18,9 @@
 
 body{
     margin: 0;
-    background: #1c1b1b;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-color: #1c1b1b;
     width: 100%;
 }
 /* 
@@ -136,6 +138,18 @@ section.sec2{
 } 
 
 .botoes input{
+    width: 100px;
+    height: 30px;
+    margin: 10px 10px 10px 0px;
+    background: none;
+    border-radius: 5px;
+    border: .75px solid white;
+    text-align: center;
+    color: white;
+    text-align: center;
+}
+
+.input-arq {
     width: 100px;
     height: 30px;
     margin: 10px 10px 10px 0px;
@@ -287,7 +301,6 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 }
 
 /* cards dentro do modal */
-
 .cards-conteiner {
     display: flex;
     margin-top: 20px;
@@ -334,20 +347,29 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
     animation:  animateOpacity;
     animation-duration: 1300ms;
     justify-content: center;
-    display: flex; /* Define o display do container como flex */
-    overflow: none; /* Adiciona uma barra de rolagem horizontal caso as imagens ultrapassem o tamanho do container */
+    display: flex; 
+    overflow: none;
   }
   
+  .galeria figure {
+    font-size: 11pt;
+    font-style: italic;
+    text-align: center;
+    align-items: center;
+    color: #bcbcbc;
+    width: 340px;
+    height: 200px; 
+    margin-right: 40px; 
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.823);
+    background-color: rgba(23, 23, 23, 0.887);
+  }
   .galeria img {
-    width: 370px;
-    height: 260px; /* Define a largura das imagens como 100% para ocupar todo o espaço do container */
-    margin-right: 40px; /* Adiciona um espaço de 20 pixels entre as imagens */
-    transition: transform 0.5s ease-in-out; /* Define a transição para a propriedade transform com duração de 0.5 segundos e suavização ease-in-out */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.748);
+    width: 100%;
   }
   
-  .galeria img:hover {
-    transform: scale(1.1); /* Aplica uma escala de 1.2 às imagens quando o cursor do mouse estiver sobre elas */
+  .galeria figure:hover {
+    transform: scale(1.1);
   }
   
 
