@@ -20,6 +20,7 @@
     <script src="../addon/hint/javascript-hint.js"></script>
     <!-- Outros -->
     <script src="../js/auto-complete.js"></script>
+    <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/editor.css" />
   </head>
   <body>
@@ -32,10 +33,10 @@
         <li><img style="padding-top: 10px; margin-left: 10px;" src="../images/phoenix-squadron-16.png"></li>
         <li><a href="#">Arquivos</a>
             <ul>
-                <li><a href="#">Novo Projeto</a></li>
-                <li><a href="#">Abrir Arquivo</a></li>
+                <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
+                <li><input type="button" value="Abrir Aqruivo" onclick="openArq()"></li>
                 <li><a href="#">Salvar Arquivo</a></li>
-                <li><a href="#">Salvar Arquivo em Zip</a></li>
+                <li><input type="button" value="Exportar em .zip" onclick="gerarZip()"></li>
             </ul>
         </li>
         <li><a href="#">Editar</a>
@@ -45,9 +46,10 @@
                 <li><a href="#">Apagar Tudo</a></li>
             </ul>
         </li>
-        <li><a href="#">Execultar</a>
+        <li><a href="#">Visualisar</a>
             <ul>
-                <li><a href="#">Visualizar</a></li>
+                <li><input type="button" value="Janela Externa" onclick="previewWindow()"></li>
+                <li><input type="button" value="Atualizar" onclick="previewIframe()"></li>
             </ul>
         </li>
         <li><a href="#">Preferencias</a>
@@ -77,11 +79,13 @@
       <iframe id="iframe-prev"class="iframe-preview"></iframe>
     </div>
     
+    <!-- area do console-->
+    <div class="conteiner-console">
+      <span>console.log</span>
+    </div>
+    
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
-    <button onclick="previewWindow()">Visualizar</button>
-    <button onclick="previewIframe()">Visualizar</button>
-    <button onclick="gerarZip()">Gerar ZIP</button>
     
     <script>
 
