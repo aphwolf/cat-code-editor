@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  /> 
-    <link rel="stylesheet" href="app/css/index.css">
-    <script src="app/js/index.js"></script>
+    <link rel="stylesheet" href="src/css/index.css">
+    <script src="src/js/index.js"></script>
     <title>Phoenix Code Editor - Inicio</title>
 </head>
 <header>
@@ -15,30 +15,16 @@
 <body>
 <nav class="dp-menu">
         <ul>
-            <li><img style="padding-top: 10px; margin-left: 10px;" src="app/images/phoenix-squadron-16.png"></li>
-            <li><a href="#">Arquivos</a>
+            <li><img style="padding-top: 10px; margin-left: 10px;" src="src/images/phoenix-squadron-16.png"></li>
+            <li><a href="#">Arquivo</a>
                 <ul>
-                    <li><a href="#">Novo Projeto</a></li>
-                    <li><a>Abrir Arquivo</a></li>
-                    <li><a href="#">Salvar Arquivo</a></li>
-                    <li><a href="#">Salvar Arquivo em Zip</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Editar</a>
-                <ul>
-                    <li><a href="#">Copiar</a></li>
-                    <li><a href="#">Colar</a></li>
-                    <li><a href="#">Apagar Tudo</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Execultar</a>
-                <ul>
-                    <li><a href="#">Visualizar</a></li>
+                    <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
+                    <li><input type="button" value="Abrir Aqruivo" onclick="openArq()"></li>
                 </ul>
             </li>
             <li><a href="#">Preferencias</a>
                 <ul>
-                    <li><a href="#">Tela Cheia</a></li>
+                    <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
                     <li><a href="#">Tema do Editor</a></li>
                 </ul>
             </li>
@@ -49,7 +35,7 @@
             </li>
             <li><a href="#">Sobre</a>
                 <ul>
-                    <li><a href="#">versão</a></li>
+                    <li><a href="#">Versão</a></li>
                     <li><a href="#">Criadores</a></li>
                     <li><a href="#">Github</a></li>
                 </ul>
@@ -57,13 +43,7 @@
         </ul>
 </nav>
 <br>
-<!-- <i class="fa-light fa-house-chimney"></i> 
-<i class="fa-light fa-display"></i>
-<i class="fa-brands fa-google-drive"></i>
-<i class="fa-brands fa-dropbox"></i>
-<i class="fa-sharp fa-solid fa-star"></i>
-<i class="fa-duotone fa-star"></i>
--->
+
 <main>
 <br>             
      <!-- Seccao dos conteudos localizado a direita do projeto -->
@@ -71,7 +51,7 @@
         <!-- Article que engloba fotos botoes e o modal -->
         <article class="art2">
             <div class="topea">
-                <img src="./app/images/phoenix-squadron.png" alt="Phoenix Code Editor">
+                <img src="./src/images/phoenix-squadron.png" alt="Phoenix Code Editor">
                 <div style="padding-left: 20px;">
                     <span class="text-logo">Phoenix Code Editor</span>
                     <span class="text-slogan">Code sua visão web com facilidade e eficiência.</span><br>
@@ -92,15 +72,15 @@
          <!-- Secçaona direita do projeto -->
          <div class="galeria">
             <figure>
-              <img src="app/images/blank.png" alt="Imagem 1">
+              <img src="src/images/blank.png" alt="Imagem 1">
               <figcaption>" Realce de sintaxy bonito."</figcaption>
             </figure>
             <figure>
-              <img src="app/images/blank.png" alt="Imagem 2">
+              <img src="src/images/blank.png" alt="Imagem 2">
               <figcaption>"Desginer Moderno é fácil de usar."</figcaption>
             </figure>
             <figure>
-              <img src="app/images/blank-2.png" alt="Imagem 3">
+              <img src="src/images/blank-2.png" alt="Imagem 3">
               <figcaption>"Sintaxy de linguagem embutida."</figcaption>
             </figure>
           </div>
@@ -117,30 +97,30 @@
 
             <div class="card" onclick="newProjectJs()">
                 <div class="card-img">
-                <img src="app/images/icon-js.svg">
+                <img src="src/images/icon-js.svg">
                 </div>
                 <label>Script JS</label>
             </div>
 
             <div class="card" onclick="newProjectWeb()">
                 <div class="card-img">
-                <img src="app/images/icon-js.svg">
-                <img src="app/images/icon-html.svg">
-                <img src="app/images/icon-css.svg">
+                <img src="src/images/icon-js.svg">
+                <img src="src/images/icon-html.svg">
+                <img src="src/images/icon-css.svg">
                 </div>
                 <label>Página Web</label>
             </div>
 
             <div class="card">
                 <div class="card-img">
-                <img src="app/images/icon-html.svg">
+                <img src="src/images/icon-html.svg">
                 </div>
                 <label>Arquivo HTML</label>
             </div>
 
             <div class="card">
                 <div class="card-img">
-                <img src="app/images/icon-json.svg">
+                <img src="src/images/icon-json.svg">
                 </div>
                 <label>Arquivo JSON</label>
             </div>

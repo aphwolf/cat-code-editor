@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel=stylesheet href="../doc/docs.css">
+    <link rel="stylesheet" href="../lib/codemirror.css">
+    <link rel="stylesheet" href="../theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="../addon/hint/show-hint.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="../lib/codemirror.js"></script>
+    <script src="../addon/edit/closetag.js"></script>
+    <script src="../addon/edit/closebrackets.js"></script>
+    <script src="../addon/fold/xml-fold.js"></script>
+    <script src="../mode/xml/xml.js"></script>
+    <script src="../mode/javascript/javascript.js"></script>
+    <script src="../mode/css/css.js"></script>
+    <script src="../mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../mode/markdown/markdown.js"></script>
+    <script src="../addon/hint/show-hint.js"></script>
+    <script src="../addon/hint/javascript-hint.js"></script>
+    <!-- Outros -->
+    <script src="../js/auto-complete.js"></script>
+    <link rel="stylesheet" href="../css/editor.css" />
+  </head>
+  <body>
+    <!-- Barra de navegação -->
+    <header id="header" class="header">
+      <a href="/Icones/icon.png">Icon</a>
+  </header>
+<nav class="dp-menu">
+    <ul>
+        <li><img style="padding-top: 10px; margin-left: 10px;" src="../images/phoenix-squadron-16.png"></li>
+        <li><a href="#">Arquivos</a>
+            <ul>
+                <li><a href="#">Novo Projeto</a></li>
+                <li><a href="#">Abrir Arquivo</a></li>
+                <li><a href="#">Salvar Arquivo</a></li>
+                <li><a href="#">Salvar Arquivo em Zip</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Editar</a>
+            <ul>
+                <li><a href="#">Copiar</a></li>
+                <li><a href="#">Colar</a></li>
+                <li><a href="#">Apagar Tudo</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Execultar</a>
+            <ul>
+                <li><a href="#">Visualizar</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Preferencias</a>
+            <ul>
+                <li><a href="#">Tela Cheia</a></li>
+                <li><a href="#">Tema do Editor</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Documentação</a>
+            <ul>
+                <li><a href="#">Atalhos</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sobre</a>
+            <ul>
+                <li><a href="#">versão</a></li>
+                <li><a href="#">Criadores</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+    <!-- Campo do editor de código-->
+    <div class="conteiner-editor">
+      <textarea  id="editor"></textarea>
+      <iframe id="iframe-prev"class="iframe-preview"></iframe>
+    </div>
+    
+    <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
+    <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
+    <button onclick="previewWindow()">Visualizar</button>
+    <button onclick="previewIframe()">Visualizar</button>
+    <button onclick="gerarZip()">Gerar ZIP</button>
+    
+    <script>
+
+      //carregar o conteúdo de código salvo no localstorage-->
+      window.onload = function() {
+        editor.setValue(localStorage.getItem('PCE-arquivo-conteudo'))
+      }
+
+      let myWords = html5Syntax();
+
+      // Seta as configurações do edditor
+      const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        mode: "htmlmixed", //htmlmixed  modo composto que inclui o html, javascript e css.
+        theme: "tomorrow-night-bright",
+        extraKeys: { "Ctrl-Space": "autocomplete" },
+        lineNumbers: true,
+        autoCloseTags: true,
+        autoCloseBrackets: true,
+        hintOptions: {
+           completeSingle: false,
+           hint: myHintFunction}
+      });
+
+      // Função para sujestões de código
+      function myHintFunction(editor) {
+        const cursor = editor.getCursor();
+        const token = editor.getTokenAt(cursor);
+        const start = token.start;
+        const end = cursor.ch;
+        const line = cursor.line;
+        const currentWord = token.string;
+        const wordList = myWords.filter(function (word) {
+          return word.startsWith(currentWord);
+        });
+        if (wordList.length > 0) {
+          return {
+            list: wordList,
+            from: CodeMirror.Pos(line, start),
+            to: CodeMirror.Pos(line, end)
+          };
+        }
+      }
+
+      // carregando um arquivo
+      const inputFile = document.getElementById("inputFile");
+      inputFile.addEventListener("change", () => {
+        const file = inputFile.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const content = event.target.result;
+          editor.setValue(content);
+      };
+      reader.readAsText(file);
+      });
+
+      //preview em nova janela
+      function previewWindow() {
+        const code = editor.getValue();
+        const previewWindow = window.open("", "preview", "width=800,height=600");
+        previewWindow.document.open();
+        previewWindow.document.write('');
+        previewWindow.document.write(code);
+        previewWindow.onbeforeunload = function() {
+        previewWindow.close();
+      };
+    }
+
+     // Atualizar o conteúdo do iframe
+    function previewIframe() {
+      const code = editor.getValue();
+      const iframe = document.getElementById("iframe-prev");
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      iframeDoc.open();
+      iframeDoc.write(code);
+      iframeDoc.close();
+    }
+
+
+    // gerar o arquivo ZIP e baixá-lo no navegador
+    function gerarZip() {
+      // Cria uma nova instância da biblioteca JSZip
+      var zip = new JSZip();
+
+      // Adiciona um arquivo chamado "hello.txt" com o conteúdo "Olá, mundo!" ao arquivo ZIP
+      zip.file("hello.txt", "Olá, mundo!");
+
+      // Gera o arquivo ZIP como um Blob
+      zip.generateAsync({ type: "blob" }).then(function(blob) {
+      // Salva o arquivo ZIP em um arquivo no sistema de arquivos do usuário
+      saveAs(blob, "meu-arquivo.zip");
+    });
+
+    }
+    
+    </script>
+  </body>
+</html>
