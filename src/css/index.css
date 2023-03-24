@@ -366,25 +366,31 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
     overflow: none;
   }
   
-  .galeria figure {
+.galeria figure {
     font-size: 11pt;
     font-style: italic;
     text-align: center;
     align-items: center;
     color: #bcbcbc;
     width: 340px;
-    height: 200px; 
-    margin-right: 3px; 
+    height: 255px; 
+    margin-right: 3px;
     transition: transform 0.5s ease-in-out;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.823);
     background-color: rgba(23, 23, 23, 0.887);
-  }
-  .galeria img {
-    width: 100%;
-  }
-  
-  .galeria figure:hover {
+}
+
+.galeria figure:hover {
     transform: scale(1.1);
-  }
+}
+
+.galeria figcaption {
+    margin-top: 2.5px;
+
+}
+
+.galeria img {
+    width: 100%;
+}
   
 
