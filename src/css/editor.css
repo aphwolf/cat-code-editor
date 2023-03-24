@@ -26,10 +26,6 @@
     background-color: #979797;
 }
 
-* {
-    font-family: Roboto;
-}
-
 
 body{
     margin: 0;
@@ -41,6 +37,7 @@ body{
 SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 */
 .dp-menu input[type="button"]{
+    font-family: Roboto;
     text-align: left;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -56,9 +53,11 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 
 .dp-menu input[type="button"]:hover {
     background-color:  rgb(129, 128, 128);
+    
 }
 .dp-menu ul{
-    font-size: 11pt;
+    font-family: Roboto;
+    font-size: 10pt;
     list-style-type: none;
     padding: 0;
     position: fixed;
@@ -92,7 +91,7 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     display: none;
     left: 0;
     position: absolute;
-    margin-top: 30px;
+    margin-top: 29px;
 }
 
 .dp-menu ul li:hover ul{
@@ -110,9 +109,12 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 CODIGO EDITADO POR LEONEL MIGUINS
 */
 .CodeMirror {
-    width: 90%;
-    height: 550px;
+    width: 100%;
+    height: 800px;
     font-size: 10pt;
+    font-family: JetBrains;
+    letter-spacing: -0.7px;
+    word-spacing: 2px;
 
 }
 
@@ -121,25 +123,6 @@ CODIGO EDITADO POR LEONEL MIGUINS
     display: flex;
     margin-top: 23px;
     
-}
-
-.conteiner-console {
-    position: fixed;
-    bottom: 0;
-    animation: animateOpacity 1300ms;
-    padding-left: 20px;
-    background-color: #131313;
-    color: rgb(89, 215, 89);
-    width: 100%;
-    height: 50px;
-    font-family: JetBrains;
-}
-
-.iframe-preview {
-    width: 35%;
-    background-color: aliceblue;
-    color: black;
-    border: none;
 }
 
 .conteiner-editor-preview {

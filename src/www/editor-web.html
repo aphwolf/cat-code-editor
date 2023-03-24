@@ -36,6 +36,7 @@
                 <li><input type="button" value="Página Inicial" onclick="window.location.replace('../../index.html')"></li>
                 <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
                 <li><input type="button" value="Abrir Arquivo" onclick="openArq()"></li>
+                <li><input type="button" value="Salvar" onclick="salvar()"></li>
                 <li><input type="button" value="Salvar Arquivo" onclick="salvarArq()"></li>
                 <li><input type="button" value="Exportar em .zip" onclick="gerarZip()"></li>
             </ul>
@@ -50,12 +51,12 @@
         <li><a href="#">Visualisar</a>
             <ul>
                 <li><input type="button" value="Janela Externa" onclick="previewWindow()"></li>
-                <li><input type="button" value="Atualizar" onclick="previewIframe()"></li>
+                <li><input type="button" value="Atualizar" onclick="previewWindow()"></li>
             </ul>
         </li>
         <li><a href="#">Preferencias</a>
             <ul>
-                <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
+                <li><input type="button" value="Tela Cheia - F11" onclick="fullscreen()"></li>
                 <li><a href="#">Tema do Editor</a></li>
             </ul>
         </li>
@@ -76,12 +77,6 @@
     <!-- Campo do editor de código-->
     <div class="conteiner-editor">
       <textarea  id="editor"></textarea>
-      <iframe id="iframe-prev"class="iframe-preview"></iframe>
-    </div>
-    
-    <!-- area do console-->
-    <div class="conteiner-console" >
-      <span id="console"></span>
     </div>
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
@@ -118,9 +113,9 @@
         const currentWord = token.string;
         const wordList = myWords.filter(function (word) {
           return word.startsWith(currentWord);
-        });
-        if (wordList.length > 0) {
-          return {
+          });
+            if (wordList.length > 0) {
+            return {
             list: wordList,
             from: CodeMirror.Pos(line, start),
             to: CodeMirror.Pos(line, end)
@@ -170,28 +165,25 @@
         zip.file(namefile, code);
         zip.generateAsync({ type: "blob" }).then(function(blob) {
         saveAs(blob, "meu-projeto.zip");
-        toast('Projeto salvo na pasta download!');
         });
       }
 
-      // salvar arquivo
+      // salvar arquivo no computador
       function salvarArq() {
         const code = editor.getValue();
         const namefile = localStorage.getItem("PCE-arquivo-nome");
         const blob = new Blob([code], {type: "text/plain;charset=utf-8"});
         saveAs(blob, namefile);
-        toast('Arquivo salvo na pasta download!');
       }
 
-      // informação pop-up que indica informações do sistema, alterações e erros.
-      function toast(message) {
-        const consoleElem = document.getElementById("console");
-        const text = consoleElem.innerText + "\n";
-        consoleElem.innerText = text + message + "\n";
+      function salvar() {
+        const code = editor.getValue();
+        localStorage.setItem('PCE-arquivo-conteudo', code)
+        window.location.reload();
+
       }
 
-    
-    
+
     </script>
   </body>
 </html>
