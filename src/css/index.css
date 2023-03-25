@@ -26,6 +26,9 @@ body{
 /* 
 SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 */
+.dp-menu {
+    height: 35px;
+}
 .dp-menu input[type="button"]{
     text-align: left;
     color: rgb(255, 255, 255);
@@ -44,7 +47,7 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     background-color:  rgb(129, 128, 128);
 }
 .dp-menu ul{
-    font-size: 11pt;
+    font-size: 10pt;
     list-style-type: none;
     padding: 0;
     position: fixed;
@@ -65,6 +68,7 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 10px;
+    height: 22px;
     display: inline-block;
     transition: .3s;
     background-color: rgb(78, 78, 78);
@@ -323,7 +327,8 @@ SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS
 
 .card {
     display: grid;
-    position: relative;  
+    position: relative;
+    font-weight: bolder;
     font-size: 10pt;
     width: 100px;
     height: 140px;
