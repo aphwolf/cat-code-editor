@@ -3,8 +3,38 @@ window.onload = function() {
  
 }
 
+// cria um novo projeto web completo
 function newProjectWeb() {
   window.location.replace('src/www/editor-web.html');
+  const fileName = 'index.html'
+  const content =
+   `<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <style>
+        /* Seus estilos aqui */
+        body {
+          background-color: white;
+          font-size: 13pt;
+          text-align: center;
+        }
+      </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu Projeto Web</title>
+   </head>
+   <body>
+    <!-- Meu projeto usando o Cat Code Editor -->
+    <h1>Meu Projeto</h1>
+     <script>
+        // Suas funções aqui:
+     </script>
+  </body>
+  </html>`;
+
+  localStorage.setItem('CCE-arquivo-conteudo', content);
+  localStorage.setItem('CCE-arquivo-nome', fileName);
 
 }
 
@@ -31,15 +61,15 @@ function openArq() {
       const reader = new FileReader();
       reader.onload = (event) => {
       const content = event.target.result;
-      localStorage.setItem('PCE-arquivo-conteudo', content);
-      localStorage.setItem('PCE-arquivo-nome', fileName);
+      localStorage.setItem('CCE-arquivo-conteudo', content);
+      localStorage.setItem('CCE-arquivo-nome', fileName);
         if(fileName.includes('.js') || fileName.includes('.json')) {
           //redireciona para o editor especifico para js, json
           window.location.replace('src/www/editor-js.html');
         }else{
           window.location.replace('src/www/editor-web.html');
         }
-  };
+    };
     reader.readAsText(file);
   });
 }
