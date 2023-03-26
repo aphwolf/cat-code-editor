@@ -31,7 +31,7 @@
   </header>
 <nav class="dp-menu">
     <ul>
-        <li><a href="#">Arquivos</a>
+        <li><a href="#">Projeto</a>
             <ul>
                 <li><input type="button" value="Página Inicial" onclick="window.location.replace('../../index.html')"></li>
                 <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
@@ -43,21 +43,26 @@
         </li>
         <li><a href="#">Editar</a>
             <ul>
-                <li><a href="#">Copiar</a></li>
-                <li><a href="#">Colar</a></li>
-                <li><a href="#">Apagar Tudo</a></li>
+                <li><input type="button" value="Copiar Tudo" onclick="copiarTudo()"></li>
+                <li><input type="button" value="Colar" onclick="colar()"></li>
+                <li><input type="button" value="Apagar Tudo" onclick="apagarTudo()"></li>
             </ul>
         </li>
-        <li><a href="#">Visualisar</a>
+        <li><a href="#">Ferramentas</a>
+          <ul>
+              <li><input type="color" value="Gerador rgb"></li>
+          </ul>
+      </li>
+        <li><a href="#">Vizualisar</a>
             <ul>
-                <li><input type="button" value="Janela Externa" onclick="previewWindow()"></li>
-                <li><input type="button" value="Atualizar" onclick="previewWindow()"></li>
+                <li><input type="button" value="Visualização Externa" onclick="previewWindow()"></li>
+                <li><input type="button" value="Visualização Interna" onclick="previewIframe()"></li>
+                <li><input type="button" value="Atualizar" onclick="previewIframe(); captureConsoleOutput()"></li>
             </ul>
         </li>
         <li><a href="#">Preferencias</a>
             <ul>
                 <li><input type="button" value="Tela Cheia - F11" onclick="fullscreen()"></li>
-                <li><a href="#">Tema do Editor</a></li>
             </ul>
         </li>
         <li><a href="#">Sobre</a>
@@ -73,7 +78,10 @@
     <!-- Campo do editor de código-->
     <div class="conteiner-editor">
       <textarea  id="editor"></textarea>
+      <!-- Campo para visualização da pagina html-->
+      <iframe id="iframe-prev"></iframe>
     </div>
+
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
@@ -133,6 +141,7 @@
 
       //preview em nova janela
       function previewWindow() {
+        previewIframe();
         const code = editor.getValue();
         const previewWindow = window.open("", "preview", "width=800,height=600");
         previewWindow.document.open();
@@ -172,14 +181,43 @@
         saveAs(blob, namefile);
       }
 
+      // salva o código editado apenas no locastorage
       function salvar() {
         const code = editor.getValue();
         localStorage.setItem('PCE-arquivo-conteudo', code)
         window.location.reload();
+      }
+
+      // copia o texto do clipboard e cola no editor
+      async function colar() {
+        try {
+          if (navigator.clipboard) {
+          const text = await navigator.clipboard.readText();
+          editor.setValue(text)
+          }
+        }catch (error){
+          console.log("erro ao acessar o navigator.clipboard\n " + error)
+        }
+      }
+
+      // copiar todo o texto do editor para o clipboard
+      async function copiarTudo() {
+        const text = editor.getValue();
+        try {
+          if(navigator.clipboard){
+            await navigator.clipboard.writeText(text)
+          }
+        } catch (error) {
+          console.log("erro ao acessar o navigator.clipboard\n" + error)
+        }
 
       }
 
+      //apagar todo o código do editor
+      function apagarTudo() {
+        editor.setValue("");
 
+      }  
     </script>
   </body>
 </html>

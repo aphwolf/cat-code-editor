@@ -32,6 +32,7 @@ body{
     background: #1c1b1b;
     width: 100%;
     height: 100%;
+    font-family: Roboto;
 }
 /* 
 SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
@@ -44,14 +45,11 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     text-align: left;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    padding: 10px;
     display: inline-block;
-    transition: .3s;
     background-color: rgb(78, 78, 78);
     border: none;
     width: 100%;
-    height: auto;
-
+    height: 33px;
 }
 
 .dp-menu input[type="button"]:hover {
@@ -73,20 +71,21 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 .dp-menu ul li{
     display: inline;
     position: relative;
+
 }
 
 .dp-menu ul li a{
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 10px;
-    height: 22px;
+    height: 18px;
     display: inline-block;
-    transition: .3s;
     background-color: rgb(78, 78, 78);
 }
 
 .dp-menu ul li a:hover{
     background-color: rgb(129, 128, 128);
+    height: 30px;
 }
 
 .dp-menu ul ul{
@@ -116,7 +115,7 @@ CODIGO EDITADO POR LEONEL MIGUINS
     font-size: 10pt;
     font-weight: 500;
     font-family: JetBrains;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.6px;
     word-spacing: 2px;
 
 }
@@ -124,7 +123,7 @@ CODIGO EDITADO POR LEONEL MIGUINS
 .conteiner-editor {
     animation: animateOpacity 1300ms;
     display: flex;
-    margin-top: -10px;
+    margin-top: -11px;
     
 }
 
@@ -136,4 +135,9 @@ CODIGO EDITADO POR LEONEL MIGUINS
     margin-left: 10px;
     padding: 10px;
 
+}
+
+#iframe-prev {
+    border: none;
+    background-color: #ededed;
 }
