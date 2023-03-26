@@ -12,9 +12,6 @@
     from {opacity: 0;}
 }
 
-*{
-    font-family: Roboto;
-}
 
 body{
     margin: 0;
@@ -22,12 +19,14 @@ body{
     background-size: cover;
     background-color: #1c1b1b;
     width: 100%;
+    font-family: Roboto;
 }
 /* 
 SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 */
 .dp-menu {
     height: 35px;
+    font-family: Roboto;
 }
 .dp-menu input[type="button"]{
     text-align: left;
