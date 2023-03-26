@@ -1,3 +1,5 @@
+![Alt ou título da imagem](src/images/print.png)
+
 ## Sobre
 
 * O Phoenix Code Editor é um editor de código intuitivo projetado para pequenos desenvolvimentos web. Ele oferece um conjunto de recursos para edição de código em linguagens de programação como HTML, CSS e JavaScript.
