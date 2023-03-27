@@ -62,7 +62,7 @@
         </li>
         <li><a href="#">Preferencias</a>
             <ul>
-                <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
+                <li><input type="button" value="Tela Cheia" onclick="fullscreen(), systemMgs('erro', 'arquivo não salvo')"></li>
                 <li><input type="button" value="Temas" onclick="fullscreen()"></li>
             </ul>
         </li>
@@ -82,7 +82,6 @@
       <!-- Campo para visualização da pagina html-->
       <iframe id="iframe-prev"></iframe>
     </div>
-
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
@@ -171,6 +170,7 @@
         zip.generateAsync({ type: "blob" }).then(function(blob) {
         saveAs(blob, "meu-projeto.zip");
         });
+        
       }
 
       // salvar arquivo no computador
@@ -219,5 +219,19 @@
 
       }  
     </script>
+
+    <!-- Toast de menssagens do sistema-->
+    <div class="toast">
+      <div class="toast-content">
+          <i class="fas fa-solid fa-exclamation"></i>
+          <div class="message">
+              <span class="text text-1">Erro</span>
+              <span class="text text-2">erro de sintaxe</span>
+          </div>
+      </div>
+      <i class="fa-solid fa-xmark close"></i>
+      <div class="progress"></div>
+   </div> 
+
   </body>
 </html>
