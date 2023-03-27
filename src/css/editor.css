@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @font-face {
     font-family: Roboto;
     src: url('../fonts/Roboto-Medium.ttf');
@@ -105,6 +107,126 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
 .dp-menu ul ul li a{
     display: block;
 }
+
+/* Menssagens do sistema */
+.toast{
+    position: fixed;
+    z-index: 100;
+    bottom: 25px;
+    right: 30px;
+    border-radius: 12px;
+    background: #232323;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-left: 3px solid #888888;
+    border-top: 3px solid #888888;
+    border-right: 3px solid #888888;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active{
+    transform: translateX(0%);
+}
+
+.toast .toast-content{
+    display: flex;
+    align-items: center;
+}
+
+.toast-content .fa-exclamation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: #f44040;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.toast-content .message{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.message .text{
+    font-size: 12px;
+    font-weight: 400;;
+    color: #ffffff;
+}
+
+.message .text.text-1{
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.toast .close{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.toast .close:hover{
+    opacity: 1;
+}
+
+.toast .progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #7e7d7d;
+}
+
+.toast .progress:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f44040;
+}
+
+.progress.active:before{
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+
+button{
+    padding: 12px 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: #f44040;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #f10e0e;
+}
+
+.toast.active ~ button{
+    pointer-events: none;
+}
+
 /*
 CODIGO EDITADO POR LEONEL MIGUINS
 */
