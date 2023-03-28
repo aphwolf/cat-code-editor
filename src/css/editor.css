@@ -124,6 +124,7 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     overflow: hidden;
     transform: translateX(calc(100% + 30px));
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+    letter-spacing: 1px;
 }
 
 .toast.active{
@@ -139,8 +140,8 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     background-color: #ed7b25;
     color: #fff;
     font-size: 20px;
@@ -157,11 +158,6 @@ SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS
     font-size: 12px;
     font-weight: 400;;
     color: #ffffff;
-}
-
-.message .text.text-1{
-    font-weight: 600;
-    color: rgb(255, 255, 255);
 }
 
 .toast .close{
