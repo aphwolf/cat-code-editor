@@ -50,7 +50,7 @@
         </li>
         <li><a href="#">Ferramentas</a>
           <ul>
-              <li><input type="color" value="Gerador rgb"></li>
+              <li>teste</li>
           </ul>
       </li>
         <li><a href="#">Vizualisar</a>
@@ -82,7 +82,6 @@
       <!-- Campo para visualização da pagina html-->
       <iframe id="iframe-prev"></iframe>
     </div>
-
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
@@ -149,6 +148,7 @@
         previewWindow.document.write(code);
         previewWindow.onbeforeunload = function() {
         previewWindow.close();
+        systemMsg("A Janela foi atualizada!")
        };
       }
 
@@ -160,6 +160,7 @@
         iframeDoc.open();
         iframeDoc.write(code);
         iframeDoc.close();
+        systemMsg("O iframe foi atualizado!")
       }
 
       // gerar o arquivo ZIP e baixá-lo no navegador
@@ -167,10 +168,11 @@
         const zip = new JSZip();
         const namefile = localStorage.getItem("CCE-arquivo-nome");
         const code = editor.getValue();
-        zip.file(namefile, code);
-        zip.generateAsync({ type: "blob" }).then(function(blob) {
-        saveAs(blob, "meu-projeto.zip");
+          zip.file(namefile, code);
+          zip.generateAsync({ type: "blob" }).then(function(blob) {
+          saveAs(blob, "meu-projeto.zip");
         });
+      systemMsg(`O arquivo ${namefile} foi baixado na pasta downloads!`)  
       }
 
       // salvar arquivo no computador
@@ -179,13 +181,14 @@
         const namefile = localStorage.getItem("CCE-arquivo-nome");
         const blob = new Blob([code], {type: "text/plain;charset=utf-8"});
         saveAs(blob, namefile);
+        systemMsg(`O arquivo ${namefile} foi baixado na pasta downloads!`)
       }
 
       // salva o código editado apenas no locastorage
       function salvar() {
+        systemMsg(`O arquivo foi salvo!`)
         const code = editor.getValue();
         localStorage.setItem('CCE-arquivo-conteudo', code)
-        window.location.reload();
       }
 
       // copia o texto do clipboard e cola no editor
@@ -211,6 +214,7 @@
           console.log("erro ao acessar o navigator.clipboard\n" + error)
         }
 
+      systemMsg(`Texto copiado para o clipboard!`)
       }
 
       //apagar todo o código do editor
@@ -219,5 +223,18 @@
 
       }  
     </script>
+
+    <!-- Toast de menssagens do sistema-->
+    <div class="toast">
+      <div class="toast-content">
+          <img src="../images/exclamacao.png">
+          <div class="message">
+              <span class="text text-2">erro de sintaxe</span>
+          </div>
+      </div>
+
+      <div class="progress"></div>
+   </div> 
+
   </body>
 </html>
