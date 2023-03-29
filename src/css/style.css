@@ -37,13 +37,17 @@ body{
     font-family: Roboto;
 }
 
-/* SEÇÃO DE CÓDIGO CRIADA POR FELIPE MIGUINS */
+/* barra de navegação */
 
-.dp-menu {
+nav {
     height: 35px;
     font-family: Roboto;
+    display: flex;
+    text-align: center;
+    justify-self: center;
 }
-.dp-menu input[type="button"]{
+
+nav input[type="button"]{
     text-align: left;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -54,10 +58,10 @@ body{
     height: 33px;
 }
 
-.dp-menu input[type="button"]:hover {
+nav input[type="button"]:hover {
     background-color:  rgb(129, 128, 128);
 }
-.dp-menu ul{
+nav ul{
     font-size: 10pt;
     list-style-type: none;
     padding: 0;
@@ -70,13 +74,13 @@ body{
     background-color: rgb(78, 78, 78);
 }
 
-.dp-menu ul li{
+nav ul li{
     display: inline;
     position: relative;
 
 }
 
-.dp-menu ul li a{
+nav ul li a{
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 10px;
@@ -85,31 +89,32 @@ body{
     background-color: rgb(78, 78, 78);
 }
 
-.dp-menu ul li a:hover{
+nav ul li a:hover{
     background-color: rgb(129, 128, 128);
     height: 30px;
 }
 
-.dp-menu ul ul{
+nav ul ul{
     display: none;
     left: 0;
     position: absolute;
     margin-top: 30px;
 }
 
-.dp-menu ul li:hover ul{
+nav ul li:hover ul{
     display: block;
 }
 
-.dp-menu ul ul {
+nav ul ul {
     width: 150px;
 }
 
-.dp-menu ul ul li a{
+nav ul ul li a{
     display: block;
 }
 
 /* Menssagens do sistema */
+
 .toast{
     position: fixed;
     z-index: 100;
@@ -200,6 +205,7 @@ main {
 }
   
 /* Formatacao da section a direita e os seus conteudos */
+
 section.sec2{
     width: 600px;
     height: 250px;
@@ -271,22 +277,6 @@ section.sec2{
     width: 120px;
 }
 
-/* Formatacao do modal e os seus conteudos */
-
-#modal{
-    display: inline;
-} 
-
-.modal-cont :nth-child(2){
-    margin-left: 6px;
-}
-.modal2 img{
-    width:30px;
-    height: 30px;
-    margin-top: 2px;
-    margin-left: 60px;
-}
-
 /* formacao dos blocos no modal */
 
 .bloco-cont{
@@ -307,134 +297,8 @@ section.sec2{
 .modal-cont2 :nth-child(2){
     margin-left: 6px;
 }
-/* SEÇÃO DE CÓDIGO CRIADA POR LEONEL MIGUINS */
 
-.modal { /* Estilo do fundo do modal */
-    padding-top: 50px;
-    display: none;
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 40px;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4);
-    animation:  animateOpacity;
-    animation-duration: 800ms;
-}
-  
-/* Estilo do conteúdo do modal */
-.modal-content {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #232323;
-    color: rgb(244, 244, 244);
-    margin: auto;
-    padding: 10px;
-    border: 1px solid #888;
-    width: 580px;
-    height: 300px;
-    padding-left: 20px;
-
-}
-
-.modal-content span {
-    color: rgb(186, 186, 186);
-    margin-top: -30px;
-}
-
-.modal-content input[type='text']{
-    width: 200px;
-    height: 30px;
-    border-radius: 5px;
-    font-size: 11pt;
-    background-color: #f6f6f6;
-    border: none;
-    text-align: center;
-    margin-left: 5px;
-}
-
-.modal-content input[type='button']{
-    width: 200px;
-    height: 35px;
-    border-radius: 5px;
-    font-size: 11pt;
-    background: none;
-    border: 2px solid white;
-    color: white;
-    margin-left: 5px;
-    font-size: 13pt;
-}
-
-.modal-content input[type='button']:hover {
-    background-color: #fff;
-    color: #1c1b1b;
-}
-  
-/* Estilo do botão de fechar */
-.close {
-    position: absolute;
-    color: #aaa;
-    right: 5px;
-    font-size: 28px;
-    font-weight: bold;
-    display: inline;
-    top: 25px;
-}
-  
-.close:hover,
-.close:focus {
-    color: rgb(217, 67, 67);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* cards dentro do modal */
-.cards-conteiner {
-    display: flex;
-    margin-top: 20px;
-}
-
-.card {
-    display: grid;
-    position: relative;
-    font-weight: bolder;
-    font-size: 10pt;
-    width: 100px;
-    height: 140px;
-    background-color: rgb(238, 238, 238);
-    color: black;
-    text-align: center;
-    border-radius: 8px;
-    margin-right: 10px;
-    border: 2px solid rgb(71, 71, 71);
-    transition: transform 0.3s ease-in-out;
-    
-}
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card-img {
-    display: flex;
-    padding-top: 10px;
-}
-
-.card-img img{
-    width: 100%;
-    height: 100px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    
-}
-
-.card span {
-    margin-top: -25px;
-    color: black;
-}
+/* Imagens com descrição de algumas funções do editor */
 
 .galeria {
     animation:  animateOpacity;
@@ -445,17 +309,18 @@ section.sec2{
   }
   
 .galeria figure {
-    font-size: 11pt;
     font-style: italic;
     text-align: center;
     align-items: center;
     color: #bcbcbc;
     width: 340px;
-    height: 255px; 
+    height: 260px; 
     margin-right: 3px;
     transition: transform 0.5s ease-in-out;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.823);
     background-color: rgba(23, 23, 23, 0.887);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .galeria figure:hover {
@@ -464,6 +329,11 @@ section.sec2{
 
 .galeria figcaption {
     margin-top: 2.5px;
+    font-size: 10pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 
 }
 
@@ -471,7 +341,7 @@ section.sec2{
     width: 100%;
 }
 
-/* editor */
+/* configurações do editor */
 
 .conteiner-editor {
     animation: animateOpacity 1300ms;

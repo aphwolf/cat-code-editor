@@ -13,29 +13,30 @@
 
 </header>
 <body>
-<nav class="dp-menu">
+<nav>
+<ul>
+    <li><a href="#">Projeto</a>
         <ul>
-            <li><a href="#">Projeto</a>
-                <ul>
-                    <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
-                    <li><input type="button" value="Abrir Arquivo" onclick="openArq()"></li>
-                    <li><input type="button" value="Continuar" onclick="window.location.replace('src/www/editor-web.html')"></li>
-                </ul>
-            </li>
-            <li><a href="#">Preferencias</a>
-                <ul>
-                    <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
-                </ul>
-            </li>
-            <li><a href="#">Sobre</a>
-                <ul>
-                    <li><a href="#">Versão</a></li>
-                    <li><a href="#">Documentação</a>
-                    <li><a href="#">Criadores</a></li>
-                    <li><a href="#">Github</a></li>
-                </ul>
-            </li>
+            <li><input type="button" value="Novo Projeto" onclick="openNewProject()"></li>
+            <li><input type="button" value="Abrir Arquivo" onclick="openFile()"></li>
+            <li><input type="button" value="Continuar" onclick="window.location.replace('src/www/editor-web.html')"></li>
         </ul>
+    </li>
+    <li><a href="#">Preferencias</a>
+        <ul>
+            <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
+            <li><input type="button" value="Configurações" onclick="fullscreen()"></li>
+        </ul>
+    </li>
+    <li><a href="#">Sobre</a>
+         <ul>
+            <li><a href="#">Versão</a></li>
+            <li><a href="#">Documentação</a>
+            <li><a href="#">Criadores</a></li>
+            <li><a href="#">Github</a></li>
+         </ul>
+    </li>
+</ul>
 </nav>
 <br>
 <main>           
@@ -54,7 +55,7 @@
             
             <div class="botoes">
                     <input type="button" value="Novo Projeto" id="NProjeto" onclick="openNewProject()">
-                    <input type="button" value="Abrir do computador" onclick="openArq()">
+                    <input type="button" value="Abrir do computador" onclick="openFile()">
                     <input style="display: none;" class="input-arq"type="file" id="inputFile" accept=".js, .json, .html, .css">
                     <input type="button" value="Templates">
             </div> 
@@ -75,54 +76,6 @@
          <img src="src/images/blank-3.png" alt="Imagem 3">
         <figcaption></figcaption>
     </figure>
-</div>
-<!-- Janela modal: Escolha o tipo de projeto-->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">x</span>
-        <h2>Escolha o tipo de projeto:</h2>
-          <span>
-            Escolha entre a criação de um único arquivo, ou a estrutura de uma página web completa! Você
-            pode escolher também entre os modelos de templates já pré-construidos.
-          </span>
-            <div class="cards-conteiner">
-
-            <div class="card" onclick="newProjectJs()">
-                <div class="card-img">
-                <img src="src/images/js.png">
-                </div>
-                <label>Script JS</label>
-            </div>
-
-            <div class="card" onclick="newProjectWeb()">
-                <div class="card-img">
-                <img src="src/images/web.png">
-                </div>
-                <label>Página Web</label>
-            </div>
-
-            <div class="card">
-                <div class="card-img">
-                <img src="src/images/html.png">
-                </div>
-                <label>Arquivo HTML</label>
-            </div>
-
-            <div class="card">
-                <div class="card-img">
-                <img src="src/images/json.png">
-                </div>
-                <label>Arquivo JSON</label>
-            </div>
-
-            <div class="card">
-                <div class="card-img">
-                <img src="src/images/md.png">
-                </div>
-                <label>Markdown</label>
-            </div>
-       </div>
-    </div>
 </div>
 
 <!-- Toast de menssagens do sistema-->

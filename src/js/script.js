@@ -4,8 +4,7 @@ window.onload = function () {
 }
 
 // cria um novo projeto web completo
-function newProjectWeb () {
-  window.location.replace('src/www/editor-web.html');
+function openNewProject () {
   const fileName = 'index.html'
   const content =
    `<!DOCTYPE html>
@@ -36,23 +35,12 @@ function newProjectWeb () {
 
   localStorage.setItem('CCE-arquivo-conteudo', content);
   localStorage.setItem('CCE-arquivo-nome', fileName);
+  window.location.replace('src/www/editor-web.html');
 
-}
-
-// Quando o usuário clicar no botão, abra o modal
-function openNewProject () {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "block";
-}
-
-// Quando o usuário clicar no <span> (x), feche o modal
-function closeModal () {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "none";
 }
 
 // carregando um arquivo
-function openArq () {
+function openFile () {
   const inputFile = document.getElementById("inputFile");
   //simula um click no input file que está oculto
   inputFile.click();
@@ -94,11 +82,8 @@ function fullscreen () {
 function systemMsg (msg) {
   const toast = document.querySelector(".toast")
   let timer1;
-
     document.querySelector(".text.text-2").innerText = msg;
     toast.classList.add("active");
-    timer1 = setTimeout(() => {
-      toast.classList.remove("active");
-    }, 5000);
+    timer1 = setTimeout(() => { toast.classList.remove("active") }, 5000);
 }
 
