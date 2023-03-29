@@ -93,12 +93,10 @@ function fullscreen () {
 //função que controla as menssagens do sistema
 function systemMsg (msg) {
   const toast = document.querySelector(".toast")
-  const progress = document.querySelector(".progress")
   let timer1;
 
     document.querySelector(".text.text-2").innerText = msg;
     toast.classList.add("active");
-    progress.classList.add("active");
     timer1 = setTimeout(() => {
       toast.classList.remove("active");
     }, 5000);
