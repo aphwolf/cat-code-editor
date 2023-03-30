@@ -21,14 +21,11 @@
     <script src="../addon/hint/javascript-hint.js"></script>
     <!-- Outros -->
     <script src="../js/auto-complete.js"></script>
-    <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
+    <title>Cat Code Editor</title>
   </head>
-  <body>
-    <!-- Barra de navegação -->
-    <header id="header" class="header">
-      <a href="/Icones/icon.png">Icon</a>
-  </header>
+<body>
+<!-- Barra de navegação -->
 <nav class="dp-menu">
     <ul>
         <li><a href="#">Projeto</a>
@@ -60,11 +57,8 @@
                 <li><input type="button" value="Atualizar" onclick="previewIframe()"></li>
             </ul>
         </li>
-        <li><a href="#">Preferencias</a>
-            <ul>
-                <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
-                <li><input type="button" value="Temas" onclick="fullscreen()"></li>
-            </ul>
+        <li>
+            <a onclick="fullscreen()">Tela Cheia</a>
         </li>
         <li><a href="#">Sobre</a>
             <ul>
@@ -85,7 +79,9 @@
     
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
+    <!-- Scripts -->
     <script src="../js/editor.js"></script>
+    
 
 <!-- Toast de menssagens do sistema-->
 <div class="toast">
@@ -95,7 +91,16 @@
                <span class="text text-2">menssagem</span>
           </div>
     </div>
-</div> 
+</div>
 
-  </body>
+<!-- Mouse Menu -->
+<div id="menu-mouse">
+    <input type="button" value="lick me" onclick="">
+    <input type="button" value="lick me" onclick="">
+    <input type="button" value="lick me" onclick="">
+    <input type="button" value="lick me" onclick="">
+</div>
+<script src="../js/script.js"></script>
+
+</body>
 </html>

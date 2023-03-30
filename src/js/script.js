@@ -1,7 +1,19 @@
-// fuções a serem executadas automaticamente a carregar a página
-window.onload = function () {
- 
-}
+  const body = document.querySelector('body');
+  // Adiciona um ouvinte de eventos ao clique com o botão direito do mouse na página
+  body.addEventListener('contextmenu', function(event) {
+  // Previne o menu padrão do navegador de aparecer
+  event.preventDefault();
+
+   const menu = document.getElementById('menu-mouse');
+   menu.style.left = event.pageX + 'px';
+   menu.style.top = event.pageY + 'px';
+   menu.style.display = 'grid';
+   menu.style.position = 'fixed'
+   body.addEventListener('click', function() {
+     menu.style.display = 'none';
+   });
+});
+
 
 // cria um novo projeto web completo
 function openNewProject () {
@@ -63,7 +75,7 @@ function openFile () {
   });
 }
 
-// função para deixar am tela cheia
+// função para deixar a aplicação em tela cheia
 function fullscreen () {
   const element = document.documentElement;
   if (element.requestFullscreen) {

@@ -1,5 +1,5 @@
  //carregar o conteúdo de código salvo no localstorage
- window.onload = function() {
+  window.onload = function() {
     editor.setValue(localStorage.getItem('CCE-arquivo-conteudo'))
   }
 
@@ -121,10 +121,7 @@
       if(navigator.clipboard){
         await navigator.clipboard.writeText(text)
       }
-    } catch (error) {
-      console.log("erro ao acessar o navigator.clipboard\n" + error)
-    }
-
+    } catch (error) {  console.log("erro ao acessar o navigator.clipboard\n" + error) }
   systemMsg(`Texto copiado para o clipboard!`)
   }
 

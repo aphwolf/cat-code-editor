@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="shortcut icon" href="src/images/gato.png"/>
-    <script src="src/js/script.js"></script>
     <title>Cat Code Editor - Inicio</title>
 </head>
 <header>
 
 </header>
 <body>
+<!-- Barra de navegação -->
 <nav>
 <ul>
     <li><a href="#">Projeto</a>
@@ -22,11 +22,8 @@
             <li><input type="button" value="Continuar" onclick="window.location.replace('src/www/editor-web.html')"></li>
         </ul>
     </li>
-    <li><a href="#">Preferencias</a>
-        <ul>
-            <li><input type="button" value="Tela Cheia" onclick="fullscreen()"></li>
-            <li><input type="button" value="Configurações" onclick="fullscreen()"></li>
-        </ul>
+    <li>
+        <a onclick="fullscreen()">Tela Cheia</a>
     </li>
     <li><a href="#">Sobre</a>
          <ul>
@@ -86,7 +83,17 @@
                <span class="text text-2">menssagem</span>
           </div>
     </div>
-</div> 
+</div>
+
+<!-- Mouse Menu -->
+<div id="menu-mouse">
+    <ul>
+      <li><a href="#">Opção 1</a></li>
+      <li><a href="#">Opção 2</a></li>
+      <li><a href="#">Opção 3</a></li>
+    </ul>
+</div>
+<script src="src/js/script.js"></script>
 
 </body>
 </html>
