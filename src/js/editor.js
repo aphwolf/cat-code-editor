@@ -131,3 +131,10 @@
 
   }
 
+// escolher a cor
+function changeColor() {
+  const colorInput = document.getElementById("color");
+  const selectedColor = colorInput.value;
+  console.log(selectedColor);
+
+}

@@ -45,11 +45,6 @@
                 <li><input type="button" value="Apagar Tudo" onclick="apagarTudo()"></li>
             </ul>
         </li>
-        <li><a href="#">Ferramentas</a>
-          <ul>
-              <li>teste</li>
-          </ul>
-      </li>
         <li><a href="#">Vizualisar</a>
             <ul>
                 <li><input type="button" value="Visualização Web" onclick="previewWindow()"></li>
@@ -72,7 +67,7 @@
 </nav>
     <!-- Campo do editor de código-->
     <div class="conteiner-editor">
-      <div class="conteiner-arquivos"></div>
+      <!-- <div class="conteiner-arquivos"></div> -->
       <textarea  id="editor"></textarea> 
       <iframe id="iframe-prev"></iframe>
     </div>
@@ -80,8 +75,7 @@
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
     <!-- Scripts -->
-    <script src="../js/editor.js"></script>
-    
+    <script src="../js/editor.js"></script>   
 
 <!-- Toast de menssagens do sistema-->
 <div class="toast">
@@ -95,10 +89,10 @@
 
 <!-- Mouse Menu -->
 <div id="menu-mouse">
-    <input type="button" value="lick me" onclick="">
-    <input type="button" value="lick me" onclick="">
-    <input type="button" value="lick me" onclick="">
-    <input type="button" value="lick me" onclick="">
+    <input type="button" value="Copiar Tudo" onclick="copiarTudo()">
+    <input type="button" value="Salvar" onclick="salvar()">
+    <input type="button" value="Atualizar Visualização" onclick="previewIframe()">
+    <input type="button" value="salvar">
 </div>
 <script src="../js/script.js"></script>
 
