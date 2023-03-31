@@ -419,5 +419,22 @@ section.sec2{
     height: 30px;
     border-radius: 2px;
 }
+
+/* box menssage */
+
+#box-msg {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0c0c0cfd;
+    color: #f4f4f4;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    padding: 25px;
+}
+  
   
 

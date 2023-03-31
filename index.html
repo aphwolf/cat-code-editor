@@ -27,7 +27,7 @@
     </li>
     <li><a href="#">Sobre</a>
          <ul>
-            <li><a href="#">Versão</a></li>
+            <li><input type="button" value="Versão" onclick="version()"></li>
             <li><a href="#">Documentação</a>
             <li><a href="#">Criadores</a></li>
             <li><a href="#">Github</a></li>
@@ -54,7 +54,6 @@
                     <input type="button" value="Novo Projeto" id="NProjeto" onclick="openNewProject()">
                     <input type="button" value="Abrir do computador" onclick="openFile()">
                     <input style="display: none;" class="input-arq"type="file" id="inputFile" accept=".js, .json, .html, .css">
-                    <input type="button" value="Templates">
             </div> 
         </article>
     </section> 
@@ -71,7 +70,7 @@
     </figure>
     <figure>
          <img src="src/images/blank-3.png" alt="Imagem 3">
-        <figcaption></figcaption>
+        <figcaption>Sugestão de palavras é uma funcionalidade muito útil em editores de código, que auxilia os programadores a escreverem com maior eficiência e precisão. </figcaption>
     </figure>
 </div>
 
@@ -92,6 +91,11 @@
       <li><a href="#">Opção 2</a></li>
       <li><a href="#">Opção 3</a></li>
     </ul>
+</div>
+
+<!-- Caixa de menssagem -->
+<div id="box-msg">
+
 </div>
 <script src="src/js/script.js"></script>
 

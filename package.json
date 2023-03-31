@@ -1,7 +1,8 @@
 {
-    "aplication": "phoenix-code-editor",
-    "description": "",
-    "authors": "",
+    "aplication": "cat-code-editor",
+    "description": "Editor de Código",
+    "authors": "Leonel Miguins",
+    "collaborators":"Felipe Miguins, Manuel Chave",
     "version": "1.0.0",
     "license": "MIT"
 }
