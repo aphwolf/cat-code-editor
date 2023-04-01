@@ -1,4 +1,4 @@
-![Cat Code Editor](src/images/print2.png)
+![Cat Code Editor](src/images/print.png)
 
 ## Sobre
 
