@@ -100,21 +100,5 @@ function systemMsg (msg) {
 }
 
 
-function version () {
-  fetch("https://raw.githubusercontent.com/leonelmiguins/cat-code-editor/main/package.json")
-  .then(response => response.json())
-  .then(data => {
-
-    const boxMsg = document.getElementById('box-msg');
-    boxMsg.style.display = 'grid';
-    boxMsg.innerHTML = 
-    `CAT CODE EDITOR<br><br>
-    Versão: ${data.version}<br>
-    Criador: ${data.authors}<br>
-    Colaboradores: ${data.collaborators}<br>
-    Github: <a href='https://github.com/leonelmiguins' target='blank'>Link para o projeto</a>`;
-  })
-
-}
 
 

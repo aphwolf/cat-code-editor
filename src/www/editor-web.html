@@ -45,7 +45,7 @@
                 <li><input type="button" value="Apagar Tudo" onclick="apagarTudo()"></li>
             </ul>
         </li>
-        <li><a href="#">Vizualisar</a>
+        <li><a href="#">Visualisar</a>
             <ul>
                 <li><input type="button" value="Visualização Web" onclick="previewWindow()"></li>
                 <li><input type="button" value="Visualização Mobile" onclick="previewIframe()"></li>
@@ -55,26 +55,19 @@
         <li>
             <a onclick="fullscreen()">Tela Cheia</a>
         </li>
-        <li><a href="#">Sobre</a>
-            <ul>
-                <li><a href="#">Versão</a></li>
-                <li><a href="#">Documentação</a></li>
-                <li><a href="#">Criadores</a></li>
-                <li><a href="#">Github</a></li>
-            </ul>
+        <li>
+            <a href="https://github.com/leonelmiguins/cat-code-editor" target="_blank">Github</a>
         </li>
     </ul>
 </nav>
-    <!-- Campo do editor de código-->
-    <div class="conteiner-editor">
-      <!-- <div class="conteiner-arquivos"></div> -->
-      <textarea  id="editor"></textarea> 
-      <iframe id="iframe-prev"></iframe>
-    </div>
-    
+<!-- Campo do editor de código-->
+<div class="conteiner-editor">
+    <!-- <div class="conteiner-arquivos"></div> -->
+    <textarea  id="editor"></textarea> 
+    <iframe id="iframe-prev"></iframe>
+</div> 
     <!-- input file onde o usuario ira escolher so seu sistema um arquivo nos formatos definidos -->
     <input style="display: none;" type="file" id="inputFile" accept=".js, .json, .html, .css">
-    <!-- Scripts -->
     <script src="../js/editor.js"></script>   
 
 <!-- Toast de menssagens do sistema-->
@@ -92,8 +85,8 @@
     <input type="button" value="Copiar Tudo" onclick="copiarTudo()">
     <input type="button" value="Salvar" onclick="salvar()">
     <input type="button" value="Atualizar Visualização" onclick="previewIframe()">
-    <input type="button" value="salvar">
 </div>
+
 <script src="../js/script.js"></script>
 
 </body>

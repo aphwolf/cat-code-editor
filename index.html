@@ -8,9 +8,6 @@
     <link rel="shortcut icon" href="src/images/gato.png"/>
     <title>Cat Code Editor - Inicio</title>
 </head>
-<header>
-
-</header>
 <body>
 <!-- Barra de navegação -->
 <nav>
@@ -25,13 +22,8 @@
     <li>
         <a onclick="fullscreen()">Tela Cheia</a>
     </li>
-    <li><a href="#">Sobre</a>
-         <ul>
-            <li><input type="button" value="Versão" onclick="version()"></li>
-            <li><a href="#">Documentação</a>
-            <li><a href="#">Criadores</a></li>
-            <li><a href="#">Github</a></li>
-         </ul>
+    <li>
+        <a href="https://github.com/leonelmiguins/cat-code-editor" target="_blank">Github</a>
     </li>
 </ul>
 </nav>
@@ -63,7 +55,7 @@
     <figure>
          <img src="src/images/blank.png" alt="Imagem 1">
         <figcaption>"Alto-fechamento de tags. Permite o fechamento automático de tags em um código HTML ou XML, sem a necessidade de escrever manualmente o fechamento de cada uma delas."</figcaption>
-     </figure>
+    </figure>
     <figure>
         <img src="src/images/blank-2.png" alt="Imagem 2">
         <figcaption>"Suporte para linguagens embutidas. Permite a incorporação de código de uma linguagem de programação em um documento HTML, como JavaScript, CSS, PHP, entre outros."</figcaption>
@@ -87,16 +79,12 @@
 <!-- Mouse Menu -->
 <div id="menu-mouse">
     <ul>
-      <li><a href="#">Opção 1</a></li>
-      <li><a href="#">Opção 2</a></li>
-      <li><a href="#">Opção 3</a></li>
+        <input type="button" value="Novo Projeto" onclick="copiarTudo()">
+        <input type="button" value="abrir do Computador" onclick="salvar()">
+        <input type="button" value="Tela Cheia" onclick="previewIframe()">
     </ul>
 </div>
 
-<!-- Caixa de menssagem -->
-<div id="box-msg">
-
-</div>
 <script src="src/js/script.js"></script>
 
 </body>

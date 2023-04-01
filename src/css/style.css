@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 @font-face {
     font-family: Roboto;
     src: url('../fonts/Roboto-Medium.ttf');
 }
-@font-face {
-    font-family: Chopisc;
-    src: url('../fonts/Chopsic.otf');
-}
+
 @font-face {
     font-family: JetBrains;
     src: url('../fonts/JetBrainsMonoNL-Medium.ttf');
@@ -40,7 +35,7 @@ body{
 /* barra de navegação */
 
 nav {
-    height: 35px;
+    height: 31px;
     font-family: Roboto;
     display: flex;
 }
@@ -90,7 +85,7 @@ nav ul li a{
 
 nav ul li a:hover{
     background-color: rgb(129, 128, 128);
-    height: 22px;
+    height: 21px;
     cursor: pointer;
 }
 
@@ -178,6 +173,7 @@ nav ul ul li a{
 }
 
 /*  SEÇÃO DE CÓDIGO CRIADA POR MANUEL CHAVES */
+
 main {
     margin-top: 20px;
     text-align: center;
@@ -420,21 +416,5 @@ section.sec2{
     border-radius: 2px;
 }
 
-/* box menssage */
-
-#box-msg {
-    display: none;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #0c0c0cfd;
-    color: #f4f4f4;
-    width: 200px;
-    height: 200px;
-    border-radius: 5px;
-    padding: 25px;
-}
-  
   
 
