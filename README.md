@@ -1,6 +1,6 @@
 ![Cat Code Editor](src/images/print.png)
 
-## link
+## Link
 
 https://leonelmiguins.github.io/cat-code-editor/
 
