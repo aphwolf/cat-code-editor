@@ -28,6 +28,6 @@ https://leonelmiguins.github.io/cat-code-editor/
 ## Colaboradores
 
 * Felipe Miguins
-* Leonel Miguins
+* Aphwolf
 * Manuel Chave
 * Felipe Sander
